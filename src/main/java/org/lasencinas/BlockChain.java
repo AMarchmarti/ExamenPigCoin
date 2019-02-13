@@ -15,7 +15,18 @@ public class BlockChain {
             return this.blockChain;
         }
 
+        /*
+         * Lógica
+         */
+
         public void addOrigin(Transaction tran){
-            getBlockChain().add(tran);
+            this.getBlockChain().add(tran);
+        }
+
+
+        public void summarize(){
+            for (Transaction tran : this.getBlockChain()){
+                System.out.println(tran);
+            }
         }
 }
