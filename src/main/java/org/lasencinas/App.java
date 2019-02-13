@@ -47,13 +47,13 @@ public class App {
          * Crea una transaccion de pigcoins
          * Visualiza la transaccion
          */
-/*
+
         System.out.println("\n" + "Ver transaccion" + "\n" +
                 "==============="        );
 
         Transaction trx = new Transaction();
         trx = new Transaction("hash_1", "0", wallet_1.getAddress(), wallet_2.getAddress(), 20, "a flying pig!");
 
-        System.out.println(trx.toString());*/
+        System.out.println(trx.toString());
     }
 }
