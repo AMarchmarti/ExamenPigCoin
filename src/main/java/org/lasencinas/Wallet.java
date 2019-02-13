@@ -7,6 +7,11 @@ public class Wallet {
 
         private PublicKey address = null;
         private PrivateKey sKey = null;
+        private double total_input = 0;
+        private double total_output = 0;
+        private double balance = 0;
+        private int inputTransactions = 0;
+        private int outputTransactins = 0;
 
     /*-------------Setters-------------------------*/
 
@@ -22,5 +27,11 @@ public class Wallet {
 
         public PublicKey getAddress(){
             return this.address;
+        }
+
+    /*----------------Lógica------------------------*/
+
+        public void generateKeyPair(){
+
         }
 }
