@@ -29,4 +29,9 @@ public class BlockChain {
                 System.out.println(tran);
             }
         }
+
+
+        public void summarize(int index){
+            System.out.println(getBlockChain().get(index));
+        }
 }
