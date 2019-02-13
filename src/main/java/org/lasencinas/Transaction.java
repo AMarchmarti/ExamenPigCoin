@@ -1,5 +1,6 @@
 package org.lasencinas;
 
+import java.security.PrivateKey;
 import java.security.PublicKey;
 
 public class Transaction {
@@ -17,14 +18,52 @@ public class Transaction {
 
         }
 
-    /*----------------------Setters--------------------------*/
+        public Transaction(String hash, String prev_hash, PublicKey enviado, PublicKey recibido, double pigcoins, String mensaje){
+            this.hash = hash;
+            this.prev_hash = prev_hash;
+            this.pKey_sender = enviado;
+            this.pKey_recipient = recibido;
+            this.pigcoins = pigcoins;
+            this.message = mensaje;
+        }
+
+    /*----------------Getters---------------------------------*/
+        public String getHash(){
+            return this.hash;
+        }
+
+
+        public String getPrevHash(){
+            return this.prev_hash;}
+
+
+        public PublicKey getPKeySender() {
+            return this.pKey_sender;
+        }
+
+
+        public PublicKey getpKeyRecipient(){
+            return this.pKey_recipient;}
+
+
+        public Double getPigcoins(){
+            return this.pigcoins;}
+
+
+        public String getMessage(){
+            return this.message;}
 
 
 
         //Lógica
-/*
+
         @Override
         public String toString(){
-            return this.hashCode();
-        }*/
+            return "\n" + "hash = " + getHash()  + "\n" +
+                    "prev_hash = " + getPrevHash() + "\n" +
+                    "pKey_sender = " + getPKeySender().hashCode() + "\n" +
+                    "pKey_recipient = " + getpKeyRecipient().hashCode() + "\n" +
+                    "pigcoins = " + getPigcoins() + "\n" +
+                    "message = " + getMessage();
+        }
 }
