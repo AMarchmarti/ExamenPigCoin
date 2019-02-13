@@ -37,7 +37,11 @@ public class Wallet {
         }
 
         @Override
-        public String toString(){
-            return getAddress().toString();
+        public String toString() {
+            return "\n" + "Wallet = " + getAddress().hashCode() + "\n";/* +
+                        "Total input = " + getTotalInput() + "\n" +
+                        "Total output = " + getTotalOutput() + "\n" +
+                        "Balance = " + getBalance() + "\n";*/
+            }
         }
-}
+
