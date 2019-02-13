@@ -1,5 +1,6 @@
 package org.lasencinas;
 
+import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 
@@ -32,6 +33,11 @@ public class Wallet {
     /*----------------Lógica------------------------*/
 
         public void generateKeyPair(){
+            setAddress(GenSig.generateKeyPair().getPublic());
+        }
 
+        @Override
+        public String toString(){
+            return getAddress().toString();
         }
 }
