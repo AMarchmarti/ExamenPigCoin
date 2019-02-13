@@ -30,6 +30,11 @@ public class Wallet {
             return this.address;
         }
 
+
+        public PrivateKey getSKey(){
+            return this.sKey;
+        }
+
     /*----------------Lógica------------------------*/
 
         public void generateKeyPair(){
