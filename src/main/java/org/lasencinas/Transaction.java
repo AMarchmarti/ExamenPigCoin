@@ -1,6 +1,5 @@
 package org.lasencinas;
 
-import java.security.PrivateKey;
 import java.security.PublicKey;
 
 public class Transaction {
@@ -46,7 +45,7 @@ public class Transaction {
             return this.pKey_recipient;}
 
 
-        public Double getPigcoins(){
+        public Double getPigCoins(){
             return this.pigcoins;}
 
 
@@ -63,7 +62,7 @@ public class Transaction {
                     "prev_hash = " + getPrevHash() + "\n" +
                     "pKey_sender = " + getPKeySender().hashCode() + "\n" +
                     "pKey_recipient = " + getpKeyRecipient().hashCode() + "\n" +
-                    "pigcoins = " + getPigcoins() + "\n" +
+                    "pigcoins = " + getPigCoins() + "\n" +
                     "message = " + getMessage();
         }
 }
