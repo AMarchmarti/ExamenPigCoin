@@ -3,6 +3,7 @@ package org.lasencinas;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -58,4 +59,34 @@ public class WalletTest {
         assertEquals(0, wallet_3.getTotalOutput(), 0);
         assertEquals(0, wallet_3.getBalance(), 0);}
 
+
+    @Test
+    public void load_input_transactions_test() {
+
+        Wallet origin = new Wallet();
+        origin.generateKeyPair();
+        Wallet wallet_1 = new Wallet();
+        wallet_1.generateKeyPair();
+        Wallet wallet_2 = new Wallet();
+        wallet_2.generateKeyPair();
+        Wallet wallet_3 = new Wallet();
+        wallet_3.generateKeyPair();
+
+        BlockChain bChain = new BlockChain();
+        Transaction trx = new Transaction("hash_1", "0", origin.getAddress(), wallet_1.getAddress(), 20, "a flying pig!");
+        bChain.addOrigin(trx);
+        trx = new Transaction("hash_2", "1", origin.getAddress(), wallet_2.getAddress(), 10, "pig things!");
+        bChain.addOrigin(trx);
+
+        wallet_1.loadInputTransactions(bChain);
+        assertTrue(wallet_1.getInputTransactions().size() == 1);
+        assertTrue(wallet_1.getInputTransactions().get(0).getPigCoins() == 20);
+
+        wallet_2.loadInputTransactions(bChain);
+        assertTrue(wallet_2.getInputTransactions().size() == 1);
+        assertTrue(wallet_2.getInputTransactions().get(0).getPigCoins() == 10);
+
+        wallet_3.loadInputTransactions(bChain);
+        assertTrue(wallet_3.getInputTransactions().size() == 0);
+    }
 }
