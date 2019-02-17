@@ -26,7 +26,7 @@ public class TransactionTest {
         assertEquals("0", trx.getPrevHash());
         assertNotNull(trx.getPKeySender());
         assertNotNull(trx.getpKeyRecipient());
-        assertEquals(20.0, trx.getPigcoins(), 0.01);
+        assertEquals(20.0, trx.getPigCoins(), 0.01);
         assertEquals("a flying pig!", trx.getMessage());
     }
 }
