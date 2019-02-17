@@ -62,4 +62,15 @@ public class BlockChain {
             }
             return inputs;
         }
+
+
+    public List<Transaction> loadOutputTransactions(PublicKey address){
+        List<Transaction> outputs = new LinkedList<>();
+        for (Transaction tran : getBlockChain()){
+            if (address.equals(tran.getPKeySender())){
+                outputs.add(tran);
+            }
+        }
+        return outputs;
+    }
 }
