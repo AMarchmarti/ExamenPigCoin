@@ -3,8 +3,10 @@ package org.lasencinas;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Wallet {
 
@@ -108,6 +110,24 @@ public class Wallet {
 
         public void loadOutputTransactions(BlockChain bChain){
             setOutputTransactions(bChain.loadOutputTransactions(getAddress()));
+        }
+
+        public Map<String, Double> collectCoins(Double pigcoins){
+            Map<String, Double> pigcoinsConsumados = new HashMap<>();
+            for (Transaction tran : getOutputTransactions()){
+                pigcoinsConsumados.put(tran.getHash(), tran.getPigCoins());
+            }
+
+            for (Transaction tran : getInputTransactions()){
+                pigcoinsConsumados.put(tran.getHash(), tran.getPigCoins());
+            }
+
+            return pigcoinsConsumados;
+        }
+
+        public byte[] signTransaction(String message){
+            byte[] signada = message.getBytes();
+            return signada;
         }
 }
 
