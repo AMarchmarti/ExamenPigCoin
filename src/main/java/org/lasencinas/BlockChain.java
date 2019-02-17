@@ -42,10 +42,10 @@ public class BlockChain {
             double pigcoinsOut = 0d;
             for (Transaction tran : this.getBlockChain()){
                 if (address.equals(tran.getpKeyRecipient())){
-                    pigcoinsIn += tran.getPigcoins();
+                    pigcoinsIn += tran.getPigCoins();
                 }
                 if (address.equals(tran.getPKeySender())){
-                    pigcoinsOut += tran.getPigcoins();
+                    pigcoinsOut += tran.getPigCoins();
                 }
             }
             double [] pigcoins = {pigcoinsIn, pigcoinsOut};
