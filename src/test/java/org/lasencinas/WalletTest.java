@@ -56,6 +56,6 @@ public class WalletTest {
         wallet_3.loadCoins(bChain);
         assertEquals(0, wallet_3.getTotalInput(), 0);
         assertEquals(0, wallet_3.getTotalOutput(), 0);
-        assertEquals(0, wallet_3.getBalance(), 0);
+        assertEquals(0, wallet_3.getBalance(), 0);}
 
 }
