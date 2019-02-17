@@ -89,5 +89,30 @@ public class App {
 
         bChain.summarize(position);
 
+
+        /**
+         * Indicar en la wallet
+         * el total de pigcoins que se han enviado,
+         * que se han recibido
+         * y el balance
+         */
+
+        System.out.println("\n" + "Ver el total de pigcoins de las dos wallet" + "\n" +
+                "=========================================="        );
+
+        wallet_1.loadCoins(bChain);
+        System.out.println(wallet_1.toString());
+
+        wallet_2.loadCoins(bChain);
+        System.out.println(wallet_2.toString());
+
+        /**
+         * Carga en la wallet el total de transacciones
+         * recibidas (aquellas que significan recibir pigcoins)
+         * y enviadas (aquellas que envian pigcoins)
+         * y mostrarlas
+         */
+
+
     }
 }
