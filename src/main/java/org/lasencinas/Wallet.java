@@ -24,6 +24,18 @@ public class Wallet {
             this.address = adress;
         }
 
+        public void setTotal_input(double input){
+            this.total_input = input;
+        }
+
+        public void setTotal_output(double output){
+            this.total_output = output;
+        }
+
+        public void setBalance(){
+            this.balance = getTotalInput() - getTotalOutput();
+        }
+
     /*----------------Getters-----------------------*/
 
         public PublicKey getAddress(){
@@ -35,6 +47,15 @@ public class Wallet {
             return this.sKey;
         }
 
+
+        public double getTotalInput(){return this.total_input;}
+
+
+        public double getTotalOutput(){return this.total_output;}
+
+
+        public double getBalance(){return this.balance;}
+
     /*----------------Lógica------------------------*/
 
         public void generateKeyPair(){
@@ -43,10 +64,18 @@ public class Wallet {
 
         @Override
         public String toString() {
-            return "\n" + "Wallet = " + getAddress().hashCode() + "\n";/* +
+            return "\n" + "Wallet = " + getAddress().hashCode() + "\n" +
                         "Total input = " + getTotalInput() + "\n" +
                         "Total output = " + getTotalOutput() + "\n" +
-                        "Balance = " + getBalance() + "\n";*/
+                        "Balance = " + getBalance() + "\n";
             }
+
+
+        public void loadCoins (BlockChain bChain){
+            double[] transferencia = bChain.loadWallet(this.getAddress());
+            setTotal_input(transferencia[0]);
+            setTotal_output(transferencia[1]);
+            setBalance();
+        }
         }
 
