@@ -91,7 +91,7 @@ public class WalletTest {
         assertTrue(wallet_3.getInputTransactions().size() == 0);
     }
 
-/*
+
     @Test
     public void collect_coins_test() {
 
@@ -120,7 +120,7 @@ public class WalletTest {
 
         // la cantidad a enviar es exactamente la primera transaccion entrante
         Double pigcoins = 20d;
-        assertNull(wallet.getOutputTransactions());
+        assertTrue(wallet.getOutputTransactions().isEmpty());
         Map<String, Double> coins = wallet.collectCoins(pigcoins);
         assertNotNull(coins);
         assertEquals(coins.size(), 1);
@@ -155,7 +155,7 @@ public class WalletTest {
         assertNull(coins);
 
     }
-*/
+/*
     @Test
     public void signTransaction() {
 
@@ -166,7 +166,7 @@ public class WalletTest {
         BlockChain bChain = new BlockChain();
         assertTrue(bChain.isSignatureValid(wallet.getAddress(), "pig things!", signedMessage));
     }
-/*
+*/
     @Test
     public void send_transaction_test() {
 
@@ -216,5 +216,5 @@ public class WalletTest {
         wallet_2.loadCoins(bChain);
         assertEquals(20.2, wallet_2.getBalance(), 0);
     }
-*/
+
 }

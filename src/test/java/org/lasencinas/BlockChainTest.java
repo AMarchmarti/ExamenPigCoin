@@ -126,7 +126,7 @@ public class BlockChainTest {
         consumedCoins.put("hash_3", 10d);
         assertTrue(bChain.isConsumedCoinValid(consumedCoins));
     }
-/*
+
     @Test
     public void create_transaction_test() {
 
@@ -156,6 +156,8 @@ public class BlockChainTest {
         assertEquals(9.8, bChain.getBlockChain().get(3).getPigCoins(), 0);
         bChain.summarize(3);
     }
-*/
+
+
+
 
 }

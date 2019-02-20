@@ -26,6 +26,11 @@ public class Transaction {
             this.message = mensaje;
         }
 
+
+        public void setSignature(byte[] signature){
+            this.signature = signature;
+        }
+
     /*----------------Getters---------------------------------*/
         public String getHash(){
             return this.hash;
@@ -51,6 +56,11 @@ public class Transaction {
 
         public String getMessage(){
             return this.message;}
+
+
+        public byte[] getSignature(){
+            return this.signature;
+        }
 
 
 
